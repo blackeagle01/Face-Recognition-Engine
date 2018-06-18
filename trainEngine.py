@@ -22,9 +22,9 @@ output=layer.output
 # Creating a custom model which takes input the image and returns a 4096 length encoding
 model=Model(inputs=vgg.input,outputs=[output])
 
-A=K.placeholder(shape=(224,224,3),dtype=K.floatx()) # Placeholder for the anchor image
-P=K.placeholder(shape=(224,224,3),dtype=K.floatx())	# Placeholder for the postive image
-N=K.placeholder(shape=(224,224,3),dtype=K.floatx()) # Placeholder for the negative image
+A=K.placeholder(shape=(None,224,224,3),dtype=K.floatx()) # Placeholder for the anchor image
+P=K.placeholder(shape=(None,224,224,3),dtype=K.floatx())	# Placeholder for the postive image
+N=K.placeholder(shape=(None,224,224,3),dtype=K.floatx()) # Placeholder for the negative image
 
 alpha=0.5 # margin
 
